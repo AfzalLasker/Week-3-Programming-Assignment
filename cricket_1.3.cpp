@@ -16,18 +16,25 @@ using namespace std;
 int main()
 {
     // Declare variables
-    const int total_question = 4;
 
+    // Total number of questions
+    const int total_questions = 4;
+
+    // Correct answer for question 1
     const double ticket_total_cost = 21.98;
 
+    // Range of correct answers for question 2
     const int min_answer_2 = 2;
     const int max_answer_2 = 6;
 
+    // Range of correct answers for question 3
     const int min_answer_3 = 5;
     const int max_answer_3 = 8;
 
+    // Correct answer for question 4
     const int correct_answer_4 = 2;
 
+    // Variables to store user inputs and scores
     string user_name;
     double ticket_cost;
     double answer_2;
@@ -166,12 +173,12 @@ int main()
 
 
     // Calculate percentage
-    double percentage = (total_score / total_question) * 100;
+    double percentage = (total_score / total_questions) * 100;
 
 
 
 
-    // Display a simple menu using switch to show quiz results based on user choice
+    //Display a simple menu using switch to show different quiz result options
     int choice;
     cout << "Menu:\n";
     cout << "1. View correct answer ratio" << endl;
@@ -189,7 +196,7 @@ int main()
             cout << "You answered " << total_score << " questions correctly." << endl << endl;
             break;
         case 3:
-            cout << "You got " << (total_question - total_score) << " questions wrong." << endl << endl;
+            cout << "You got " << (total_questions - total_score) << " questions wrong." << endl << endl;
             break;
         default:
             cout << "Invalid choice." << endl << endl;
@@ -200,7 +207,7 @@ int main()
     // Create the final output of the program
     cout << "Cricket Quiz Score Report for " << user_name << endl;
     cout << "------------------------------------" << endl <<endl;
-    cout << left << setw(30) << "Total questions are" << right << setw(6) << total_question << endl << endl;
+    cout << left << setw(30) << "Total questions are" << right << setw(6) << total_questions << endl << endl;
     cout << left << setw(30) << "Your total correct answers: " << right << setw(6) << total_score << endl << endl;
     cout << left << setw(30) << "Your correct answer ratio: " << right << setw(6) << setprecision(2) << fixed << percentage << "%" << endl << endl;
 
@@ -209,7 +216,7 @@ int main()
     ofstream report("Week3_report.txt");
     report << "Cricket Quiz Score Report for " << user_name << endl;
     report << "------------------------------------" << endl << endl;
-    report << left << setw(30) << "Total questions are" << right << setw(6) << total_question << endl << endl;
+    report << left << setw(30) << "Total questions are" << right << setw(6) << total_questions << endl << endl;
     report << left << setw(30) << "Total correct answers: " << right << setw(6) << total_score << endl << endl;
     report << left << setw(30) << "Correct answer ratio: " << right << setw(6) << setprecision(2) << fixed << percentage << "%" << endl;
     report.close();
